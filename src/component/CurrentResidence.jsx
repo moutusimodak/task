@@ -12,6 +12,7 @@ import {
 import { Field } from "formik";
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
+import { BorderBottom } from "@mui/icons-material";
 
 const CurrentResidence = ({
   isEditMode,
@@ -42,7 +43,9 @@ const CurrentResidence = ({
             padding: "0px 4px",
             borderRadius: "15px",
             backgroundColor: "white",
-            marginTop:"-4px"
+            marginTop:"-4px",
+         
+            
           },
         }}
         sx={{

@@ -440,7 +440,7 @@ const PermanentResidence = ({
                       <AddIcon />
                     </IconButton>
                   </InputAdornment>
-                ),
+                )
               }}
             />
           </Grid>

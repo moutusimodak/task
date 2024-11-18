@@ -110,7 +110,7 @@ const ProfileDetails = () => {
             marginTop="8%"
             sx={{ maxWidth: 800, mx: "auto", position: "relative" }}
           >
-            \<IconBar page="profile" />
+            <IconBar page="profile" />
             <Box
               display="flex"
               flexDirection="column"

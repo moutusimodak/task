@@ -5,6 +5,8 @@ import AddressDetails from "./pages/AddressDetails";
 import CourseDetails from "./pages/CourseDetails";
 import FooterSection from "./component/FooterSection";
 
+import './App.css'
+
 const App = () => {
   return (
     <Router>
