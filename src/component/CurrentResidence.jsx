@@ -43,6 +43,9 @@ const CurrentResidence = ({
           width: "368px",
           height: "36px",
           borderRadius: "10px",
+          "& .MuiInputLabel-root": {
+            marginLeft: "-12px", 
+          },
           "& .MuiInputBase-root": {
             height: "36px !important",
             borderRadius: "10px !important",

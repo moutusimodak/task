@@ -111,6 +111,7 @@ const CourseDetails = () => {
                       <InputLabel
                         sx={{
                           color: "black",
+                          marginLeft:"-10px"
                         }}
                       >
                         Course Name
@@ -128,6 +129,7 @@ const CourseDetails = () => {
                           fontSize: "14px",
                           lineHeight: "17.6px",
                           marginLeft:"-10px",
+                          
                           backgroundColor: isEditMode ? "white" : "#DCDCDC",
                           "& .MuiSelect-select.Mui-disabled": {
                             "-webkit-text-fill-color": "black",
@@ -150,6 +152,7 @@ const CourseDetails = () => {
                             <InputLabel
                               sx={{
                                 color: "black",
+                               
                               }}
                             >
                               Course Duration
@@ -166,6 +169,7 @@ const CourseDetails = () => {
                                 fontSize: "14px",
                                 fontWeight: "600",
                                 lineHeight: "17.6px",
+                               
                                 backgroundColor: isEditMode
                                   ? "white"
                                   : "#DCDCDC",
@@ -236,7 +240,7 @@ const CourseDetails = () => {
 
                   <Grid item xs={12} sm={6}>
                     <FormControl fullWidth>
-                      <InputLabel sx={{ color: "black" }}>
+                      <InputLabel sx={{ color: "black",marginLeft:"-10px" }}>
                         Loan Amount Preference
                       </InputLabel>
                       <Field
@@ -292,6 +296,7 @@ const CourseDetails = () => {
                       InputLabelProps={{
                         style: {
                           color: "black",
+                          marginLeft:"9px"
                         },
                       }}
                       sx={{
@@ -317,7 +322,7 @@ const CourseDetails = () => {
                   </Grid>
                   <Grid item xs={12} sm={6}>
                     <FormControl fullWidth>
-                      <InputLabel sx={{ color: "black" }}>
+                      <InputLabel sx={{ color: "black",marginLeft:"-10px" }}>
                         Product Type
                       </InputLabel>
                       <Field

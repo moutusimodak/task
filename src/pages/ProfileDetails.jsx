@@ -148,12 +148,16 @@ const ProfileDetails = () => {
                       InputLabelProps={{
                         style: {
                           color: "black",
+                         
                         },
                       }}
                       sx={{
                         width: "368px",
                         height: "36px",
                         borderRadius: "10px",
+                        "& .MuiInputLabel-root": {
+                          marginLeft: "-12px", 
+                        },
                         "& .MuiInputBase-root": {
                           height: "36px !important",
                           borderRadius: "10px !important",
@@ -253,6 +257,9 @@ const ProfileDetails = () => {
                         width: "368px",
                         height: "36px",
                         borderRadius: "10px",
+                        "& .MuiInputLabel-root": {
+                          marginLeft: "-12px", 
+                        },
                         "& .MuiInputBase-root": {
                           height: "36px !important",
                           borderRadius: "10px !important",
@@ -291,6 +298,9 @@ const ProfileDetails = () => {
                           width: "368px",
                           height: "36px",
                           borderRadius: "10px",
+                          "& .MuiInputLabel-root": {
+                            marginLeft: "-12px", 
+                          },
                           "& .MuiInputBase-root": {
                             height: "36px !important",
                             borderRadius: "10px !important",
@@ -327,6 +337,9 @@ const ProfileDetails = () => {
                         width: "168px",
                         height: "36px",
                         borderRadius: "10px",
+                        "& .MuiInputLabel-root": {
+                          marginLeft: "-12px", 
+                        },
                         "& .MuiInputBase-root": {
                           height: "36px !important",
                           borderRadius: "10px !important",
