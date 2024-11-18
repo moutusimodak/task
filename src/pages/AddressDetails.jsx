@@ -107,7 +107,7 @@ const AddressDetails = () => {
                   "polygon(100% 0, 100% 93%, 75% 93%, 75% 100%, 0 100%, 0% 60%, 0 0)",
               }}
             >
-              <Box marginBottom={20} sx={{marginTop:"10px"}}>
+              <Box marginBottom={20} sx={{marginTop:"0px"}}>
                 <PageHeader 
                   title="ADDRESS DETAILS"
                   isEditMode={isEditMode}

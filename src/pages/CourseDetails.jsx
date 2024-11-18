@@ -105,13 +105,18 @@ const CourseDetails = () => {
                   setEditMode={setEditMode}
                 />
 
-                <Grid container spacing={2}>
+                <Grid container spacing={3}>
                   <Grid item xs={12} sm={6}>
                     <FormControl fullWidth>
                       <InputLabel
                         sx={{
                           color: "black",
-                          marginLeft:"-10px"
+                          marginLeft: "-14px",
+                          border: "0px solid black",
+                          padding: "0px 4px",
+                          borderRadius: "15px",
+                          backgroundColor: "white",
+                          marginTop:"-4px"
                         }}
                       >
                         Course Name
@@ -128,8 +133,8 @@ const CourseDetails = () => {
                           fontWeight: "600 ",
                           fontSize: "14px",
                           lineHeight: "17.6px",
-                          marginLeft:"-10px",
-                          
+                          marginLeft: "-10px",
+
                           backgroundColor: isEditMode ? "white" : "#DCDCDC",
                           "& .MuiSelect-select.Mui-disabled": {
                             "-webkit-text-fill-color": "black",
@@ -152,7 +157,12 @@ const CourseDetails = () => {
                             <InputLabel
                               sx={{
                                 color: "black",
-                               
+                                
+                                border: "0px solid black",
+                                padding: "0px 4px",
+                                borderRadius: "15px",
+                                backgroundColor: "white",
+                                marginTop:"-4px"
                               }}
                             >
                               Course Duration
@@ -169,7 +179,7 @@ const CourseDetails = () => {
                                 fontSize: "14px",
                                 fontWeight: "600",
                                 lineHeight: "17.6px",
-                               
+
                                 backgroundColor: isEditMode
                                   ? "white"
                                   : "#DCDCDC",
@@ -208,6 +218,12 @@ const CourseDetails = () => {
                             InputLabelProps={{
                               style: {
                                 color: "black",
+                                
+                                border: "0px solid black",
+                                padding: "0px 4px",
+                                borderRadius: "15px",
+                                backgroundColor: "white",
+                                marginTop:"-4px"
                               },
                             }}
                             sx={{
@@ -240,7 +256,12 @@ const CourseDetails = () => {
 
                   <Grid item xs={12} sm={6}>
                     <FormControl fullWidth>
-                      <InputLabel sx={{ color: "black",marginLeft:"-10px" }}>
+                      <InputLabel sx={{ color: "black",  marginLeft: "-14px",
+                          border: "0px solid black",
+                          padding: "0px 4px",
+                          borderRadius: "15px",
+                          backgroundColor: "white",
+                          marginTop:"-4px"}}>
                         Loan Amount Preference
                       </InputLabel>
                       <Field
@@ -261,7 +282,8 @@ const CourseDetails = () => {
                           fontWeight: "600 ",
                           fontSize: "14px",
                           lineHeight: "17.6px",
-                          marginLeft:"-10px",
+                          marginLeft: "-10px",
+                         
                           backgroundColor: isEditMode ? "white" : "#DCDCDC",
                           "& .MuiSelect-select.Mui-disabled": {
                             "-webkit-text-fill-color": "black",
@@ -296,7 +318,12 @@ const CourseDetails = () => {
                       InputLabelProps={{
                         style: {
                           color: "black",
-                          marginLeft:"9px"
+                          marginLeft: "-1px",
+                          border: "0px solid black",
+                          padding: "0px 4px",
+                          borderRadius: "15px",
+                          backgroundColor: "white",
+                          marginTop:"-4px"
                         },
                       }}
                       sx={{
@@ -310,7 +337,7 @@ const CourseDetails = () => {
                           fontWeight: "600",
                           fontSize: "14px",
                           lineHeight: "17.6px",
-                          marginLeft:"8px",
+                          marginLeft: "0px",
                           backgroundColor: isEditMode ? "white" : "#DCDCDC",
                           "& .MuiInputBase-input.MuiOutlinedInput-input.Mui-disabled":
                             {
@@ -322,7 +349,12 @@ const CourseDetails = () => {
                   </Grid>
                   <Grid item xs={12} sm={6}>
                     <FormControl fullWidth>
-                      <InputLabel sx={{ color: "black",marginLeft:"-10px" }}>
+                      <InputLabel sx={{ color: "black",  marginLeft: "-14px",
+                          border: "0px solid black",
+                          padding: "0px 4px",
+                          borderRadius: "15px",
+                          backgroundColor: "white",
+                          marginTop:"-4px" }}>
                         Product Type
                       </InputLabel>
                       <Field
@@ -337,7 +369,7 @@ const CourseDetails = () => {
                           fontWeight: "600 ",
                           fontSize: "14px",
                           lineHeight: "17.6px",
-                          marginLeft:"-10px",
+                          marginLeft: "-10px",
                           backgroundColor: isEditMode ? "white" : "#DCDCDC",
                           "& .MuiSelect-select.Mui-disabled": {
                             "-webkit-text-fill-color": "black",
@@ -492,8 +524,8 @@ export default CourseDetails;
 //                     color: "white",
 //                     backgroundColor: "blue",
 //                     "&:hover": {
-//                       backgroundColor: "blue", 
-                      
+//                       backgroundColor: "blue",
+
 //                     },
 //                   }}
 //                   onClick={() => navigate('/profile-details')}
@@ -507,7 +539,7 @@ export default CourseDetails;
 //                     color: "white",
 //                     backgroundColor: "blue",
 //                     "&:hover": {
-//                       backgroundColor: "blue", 
+//                       backgroundColor: "blue",
 //                     },
 //                   }}
 //                 >
@@ -551,7 +583,7 @@ export default CourseDetails;
 //                     border: "1px solid",
 //                     borderRadius: "50%",
 //                     color: "gray",
-                    
+
 //                   }}
 //                 >
 //                   <BackupTableIcon fontSize="large" />
@@ -582,7 +614,7 @@ export default CourseDetails;
 //         sx={{ position: "relative", top: "-32px", left: "-20px" }}
 //       >
 //         Student
-        
+
 //       </Typography>
 //       <Box display="flex" justifyContent="space-between" alignItems="center">
 //         <Typography
@@ -881,7 +913,7 @@ export default CourseDetails;
 //       }}
 //     >
 //       <Button
-//         onClick={handleNextButtonClick} 
+//         onClick={handleNextButtonClick}
 //         type="submit"
 //         variant="contained"
 //         endIcon={<KeyboardArrowRightIcon />}

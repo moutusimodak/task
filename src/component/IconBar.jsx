@@ -28,6 +28,25 @@ const IconBar = ({ page }) => {
     course: ["person", "location", "school"],
   };
 
+  const getBackgroundColor = (iconId) => {
+    if (leftIconIds[page]?.includes(iconId)) {
+      const currentPageIndex = leftIconIds[page].indexOf(iconId);
+      const lastIndex = leftIconIds[page].length - 1;
+
+
+      if (page === "profile" && iconId === "person") {
+        return "#282AAE"; 
+      }
+
+      return currentPageIndex === lastIndex ? "#dbdbf7" : "#282AAE"; 
+    }
+    return "transparent";
+  };
+
+  const getBorderColor = (iconId) => {
+    return getBackgroundColor(iconId) === "#ADD8E6" ? "#282AAE" : "transparent";
+  };
+
   //  left icons 
   const leftIcons = allIcons.filter((icon) => leftIconIds[page]?.includes(icon.id));
 
@@ -40,20 +59,16 @@ const IconBar = ({ page }) => {
       <IconButton
         key={index}
         sx={{
-          // border: isLeftSide ? "1px solid blue" : "1px solid gray",
-          // borderRadius: "50%",
-          // color: "gray",
-          // width: "40px",
-          // height: "40px",
-          border: isLeftSide ? "none" : "1px solid blue", 
+          border:`1px solid ${isLeftSide ? getBorderColor(item.id) : "gray"}`, 
           borderRadius: "50%",
           color: isLeftSide ? "white" : "gray",        
-          backgroundColor: isLeftSide ? "blue" : "transparent",  
+          backgroundColor: isLeftSide ? getBackgroundColor(item.id) : "transparent",
+          borderColor:"gray",  
           width: "40px",
           height: "40px",
           "&:hover": {
-            backgroundColor: isLeftSide ? "blue" : "transparent", 
-            borderColor: !isLeftSide ? "blue" : undefined,  
+            backgroundColor: isLeftSide ? getBackgroundColor(item.id) : "transparent", 
+           
           },
 
         }}

@@ -134,7 +134,7 @@ const ProfileDetails = () => {
 
                 {/* Form Fields */}
 
-                <Grid container spacing={2}>
+                <Grid container spacing={3}>
                   {/* Student Name Field */}
                   <Grid item xs={12} sm={6}>
                     <Field
@@ -148,6 +148,12 @@ const ProfileDetails = () => {
                       InputLabelProps={{
                         style: {
                           color: "black",
+                          marginLeft: "-14px",
+                          border: "0px solid black",
+                          padding: "0px 4px",
+                          borderRadius: "15px",
+                          backgroundColor: "white",
+                          marginTop:"-4px"
                          
                         },
                       }}
@@ -191,6 +197,12 @@ const ProfileDetails = () => {
                       InputLabelProps={{
                         style: {
                           color: "black",
+                          marginLeft: "-1px",
+                          border: "0px solid black",
+                          padding: "0px 4px",
+                          borderRadius: "15px",
+                          backgroundColor: "white",
+                          marginTop:"-4px"
                         },
                       }}
                       sx={{
@@ -241,6 +253,12 @@ const ProfileDetails = () => {
                       InputLabelProps={{
                         style: {
                           color: "black",
+                          marginLeft: "-14px",
+                          border: "0px solid black",
+                          padding: "0px 4px",
+                          borderRadius: "15px",
+                          backgroundColor: "white",
+                          marginTop:"-4px"
                         },
                         shrink: "true",
                       }}
@@ -279,7 +297,7 @@ const ProfileDetails = () => {
                   </Grid>
                   {/* Email Id Field */}
                   <Grid container spacing={2}>
-                    <Grid item xs={12} sm={6} sx={{ mt: 2, ml: 2 }}>
+                    <Grid item xs={12} sm={6} sx={{ mt: 3, ml: 3 }}>
                       <Field
                         as={TextField}
                         fullWidth
@@ -292,6 +310,12 @@ const ProfileDetails = () => {
                         InputLabelProps={{
                           style: {
                             color: "black",
+                            marginLeft: "-14px",
+                            border: "0px solid black",
+                            padding: "0px 4px",
+                            borderRadius: "15px",
+                            backgroundColor: "white",
+                            marginTop:"-4px"
                           },
                         }}
                         sx={{
@@ -331,6 +355,12 @@ const ProfileDetails = () => {
                       InputLabelProps={{
                         style: {
                           color: "black",
+                          marginLeft: "-14px",
+                          border: "0px solid black",
+                          padding: "0px 4px",
+                          borderRadius: "15px",
+                          backgroundColor: "white",
+                          marginTop:"-4px"
                         },
                       }}
                       sx={{
@@ -376,12 +406,12 @@ const ProfileDetails = () => {
                       disabled={!isEditMode}
                     />
                   </Grid>
-                  <Grid container spacing={17.5} sx={{ ml: 2 }}>
+                  <Grid container spacing={17.5} sx={{ ml: 3 }}>
                     <Grid
                       container
                       justifyContent="flex-end"
-                      spacing={2}
-                      sx={{ paddingTop: 0, marginBottom: "13%" }}
+                      spacing={3}
+                      sx={{ paddingTop: 0, marginBottom: "13%" , marginTop:"-42px"}}
                     >
                       {/* Gender  Field */}
                       <Grid item xs={6} sm={3}>
@@ -395,6 +425,12 @@ const ProfileDetails = () => {
                             InputLabelProps={{
                               style: {
                                 color: "black",
+                                marginLeft: "-1px",
+                                border: "0px solid black",
+                                padding: "0px 4px",
+                                borderRadius: "15px",
+                                backgroundColor: "white",
+                                marginTop:"-4px"
                               },
                             }}
                             sx={{
@@ -408,6 +444,7 @@ const ProfileDetails = () => {
                                 fontSize: "14px",
                                 lineHeight: "17.6px",
                                 color: "transparent",
+
 
                                 outline: "none",
                                 boxShadow: "none",
@@ -538,6 +575,12 @@ const ProfileDetails = () => {
                             InputLabelProps={{
                               style: {
                                 color: "black",
+                                marginLeft: "-1px",
+                                border: "0px solid black",
+                                padding: "0px 4px",
+                                borderRadius: "15px",
+                                backgroundColor: "white",
+                                marginTop:"-4px"
                               },
                             }}
                             sx={{
@@ -647,11 +690,16 @@ const ProfileDetails = () => {
                     </Grid>
                   </Grid>
                   <Grid container spacing={11} sx={{ ml: 2 }}>
-                    <Grid container justifyContent="flex-end" spacing={2}>
+                    <Grid container justifyContent="flex-end" spacing={3} sx={{marginTop:"-30px"}}>
                       {/* Qualification Field */}
                       <Grid item xs={6} sm={3}>
                         <FormControl fullWidth>
-                          <InputLabel sx={{ color: "black" }}>
+                          <InputLabel sx={{ color: "black" , marginLeft: "-1px",
+                          border: "0px solid black",
+                          padding: "0px 4px",
+                          borderRadius: "15px",
+                          backgroundColor: "white",
+                          marginTop:"-4px"}}>
                             Qualification
                           </InputLabel>
                           <Field
@@ -706,6 +754,12 @@ const ProfileDetails = () => {
                           InputLabelProps={{
                             style: {
                               color: "black",
+                              marginLeft: "-1px",
+                              border: "0px solid black",
+                              padding: "0px 4px",
+                              borderRadius: "15px",
+                              backgroundColor: "white",
+                              marginTop:"-4px"
                             },
                           }}
                           sx={{

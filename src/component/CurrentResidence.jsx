@@ -37,6 +37,12 @@ const CurrentResidence = ({
         InputLabelProps={{
           style: {
             color: "black",
+            marginLeft: "-14px",
+            border: "0px solid black",
+            padding: "0px 4px",
+            borderRadius: "15px",
+            backgroundColor: "white",
+            marginTop:"-4px"
           },
         }}
         sx={{
@@ -78,6 +84,12 @@ const CurrentResidence = ({
         InputLabelProps={{
           style: {
             color: "black",
+            marginLeft: "-1px",
+            border: "0px solid black",
+            padding: "0px 4px",
+            borderRadius: "15px",
+            backgroundColor: "white",
+            marginTop:"-4px"
           },
         }}
         sx={{
@@ -129,6 +141,12 @@ const CurrentResidence = ({
             InputLabelProps={{
               style: {
                 color: "black",
+                marginLeft: "-1px",
+                border: "0px solid black",
+                padding: "0px 4px",
+                borderRadius: "15px",
+                backgroundColor: "white",
+                marginTop:"-4px"
               },
             }}
             sx={{
@@ -170,6 +188,12 @@ const CurrentResidence = ({
             InputLabelProps={{
               style: {
                 color: "black",
+                marginLeft: "-1px",
+                border: "0px solid black",
+                padding: "0px 4px",
+                borderRadius: "15px",
+                backgroundColor: "white",
+                marginTop:"-4px"
               },
             }}
             sx={{
@@ -216,6 +240,12 @@ const CurrentResidence = ({
               InputLabelProps={{
                 style: {
                   color: "black",
+                  marginLeft: "-1px",
+                  border: "0px solid black",
+                  padding: "0px 4px",
+                  borderRadius: "15px",
+                  backgroundColor: "white",
+                  marginTop:"-4px"
                 },
                 shrink: "true",
               }}
@@ -372,6 +402,12 @@ const CurrentResidence = ({
             InputLabelProps={{
               style: {
                 color: "black",
+                marginLeft: "-1px",
+                border: "0px solid black",
+                padding: "0px 4px",
+                borderRadius: "15px",
+                backgroundColor: "white",
+                marginTop:"-4px"
               },
               shrink: "true",
             }}
