@@ -489,6 +489,7 @@ const ProfileDetails = () => {
                                 outline: "none",
                                 boxShadow: "none",
                                 border: "none",
+                                marginLeft:"9px",
                                 backgroundColor: isEditMode
                                   ? "white"
                                   : "#DCDCDC",
@@ -741,6 +742,7 @@ const ProfileDetails = () => {
                               fontWeight: "600",
                               fontSize: "14px",
                               lineHeight: "17.6px",
+                              marginLeft:"9px",
                               backgroundColor: isEditMode ? "white" : "#DCDCDC",
                               "& .MuiInputBase-input.MuiOutlinedInput-input.Mui-disabled":
                                 {
@@ -771,6 +773,7 @@ const ProfileDetails = () => {
                           borderRadius: "15px",
                           backgroundColor: "white",
                           marginTop: "-4px",
+                          
                         },
                       }}
                       sx={{

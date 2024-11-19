@@ -8,21 +8,25 @@ import empImage from "../assets/emp.png";
 import bankImage from "../assets/bank.png";
 import documentImage from "../assets/document.png";
 
-
-
 const IconBar = ({ page }) => {
   const navigate = useNavigate();
 
-
   const allIcons = [
-    { id: "person", icon: <img src={personImage}  />, navigateTo: "/profile-details" },
-    { id: "location", icon: <LocationOnIcon  />, navigateTo: "/address-details" },
+    {
+      id: "person",
+      icon: <img src={personImage} />,
+      navigateTo: "/profile-details",
+    },
+    {
+      id: "location",
+      icon: <LocationOnIcon />,
+      navigateTo: "/address-details",
+    },
     { id: "school", icon: <SchoolIcon />, navigateTo: "/course-details" },
     { id: "account", icon: <img src={empImage} /> },
-    { id: "badge", icon: <img src={bankImage}  /> },
-    { id: "backup", icon: <img src={documentImage}  /> },
+    { id: "badge", icon: <img src={bankImage} /> },
+    { id: "backup", icon: <img src={documentImage} /> },
   ];
-
 
   const leftIconIds = {
     profile: ["person"],
@@ -35,12 +39,11 @@ const IconBar = ({ page }) => {
       const currentPageIndex = leftIconIds[page].indexOf(iconId);
       const lastIndex = leftIconIds[page].length - 1;
 
-
       if (page === "profile" && iconId === "person") {
-        return "#282AAE"; 
+        return "#282AAE";
       }
 
-      return currentPageIndex === lastIndex ? "#c8c9f4" : "#282AAE"; 
+      return currentPageIndex === lastIndex ? "#c8c9f4" : "#282AAE";
     }
     return "transparent";
   };
@@ -49,41 +52,38 @@ const IconBar = ({ page }) => {
     return getBackgroundColor(iconId) === "#ADD8E6" ? "#282AAE" : "transparent";
   };
 
-  //  left icons 
-  const leftIcons = allIcons.filter((icon) => leftIconIds[page]?.includes(icon.id));
+  //  left icons
+  const leftIcons = allIcons.filter((icon) =>
+    leftIconIds[page]?.includes(icon.id)
+  );
 
-  // right icons 
-  const rightIcons = allIcons.filter((icon) => !leftIconIds[page]?.includes(icon.id));
+  // right icons
+  const rightIcons = allIcons.filter(
+    (icon) => !leftIconIds[page]?.includes(icon.id)
+  );
 
- 
   const renderIcons = (iconList, isLeftSide = false) =>
     iconList.map((item, index) => (
       <IconButton
         key={index}
         sx={{
-          border:`1px solid ${isLeftSide ? getBorderColor(item.id) : "gray"}`, 
+          border: `1px solid ${isLeftSide ? getBorderColor(item.id) : "gray"}`,
           borderRadius: "50%",
-          color: isLeftSide ? "white" : "gray",        
-          backgroundColor: isLeftSide ? getBackgroundColor(item.id) : "transparent",
-          borderColor:"gray",  
+          color: isLeftSide ? "white" : "gray",
+          backgroundColor: isLeftSide
+            ? getBackgroundColor(item.id)
+            : "transparent",
+          borderColor: "gray",
           width: "40px",
           height: "40px",
           "&:hover": {
-            backgroundColor: isLeftSide ? getBackgroundColor(item.id) : "transparent", 
-           
+            backgroundColor: isLeftSide
+              ? getBackgroundColor(item.id)
+              : "transparent",
           },
-          display: "flex", // Centers the icon within the button
-          alignItems: "center",
-          justifyContent: "center",
-
         }}
         onClick={item.navigateTo ? () => navigate(item.navigateTo) : undefined}
       >
-         <Box
-          sx={{
-            fontSize: "-5px", // Reduce the size of the icon
-          }}
-        ></Box>
         {item.icon}
       </IconButton>
     ));
@@ -91,9 +91,7 @@ const IconBar = ({ page }) => {
   return (
     <Box display="flex" justifyContent="space-between" width="100%" mb={-2}>
       {/* Left Side Icons */}
-      <Box display="flex" justifyContent="center" gap={2}
-     
-      >
+      <Box display="flex" justifyContent="center" gap={2}>
         {renderIcons(leftIcons, true)}
       </Box>
 
