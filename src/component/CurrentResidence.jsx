@@ -12,7 +12,7 @@ import {
 import { Field } from "formik";
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
-import { BorderBottom } from "@mui/icons-material";
+
 
 const CurrentResidence = ({
   isEditMode,
@@ -24,7 +24,7 @@ const CurrentResidence = ({
   handleChange,
 }) => {
   return (
-    <Grid container spacing={3} columns={{ xs: 12, sm: 12, lg : 12 }}>
+    <Grid container spacing={2}>
     {/* Current House part */}
     <Grid item xs={12} sm={6}>
       <Field
@@ -49,7 +49,7 @@ const CurrentResidence = ({
           },
         }}
         sx={{
-          width: "full",
+          width: "368px",
           height: "36px",
           borderRadius: "10px",
           "& .MuiInputLabel-root": {
@@ -75,7 +75,7 @@ const CurrentResidence = ({
 
     {/* Current Area part */}
 
-    <Grid item xs={12} sm={12} lg={6} sx={{mr:-36}} >
+    <Grid item xs={12} sm={6}>
       <Field
         as={TextField}
         fullWidth
@@ -96,7 +96,7 @@ const CurrentResidence = ({
           },
         }}
         sx={{
-          width: "full",
+          width: "368px",
           height: "36px",
           borderRadius: "10px",
           "& .MuiInputBase-root": {
@@ -118,8 +118,7 @@ const CurrentResidence = ({
 
     {/* Current Pin Code*/}
 
-    <Grid container spacing={2.5} 
-    >
+    <Grid container spacing={2}>
       <Grid
         item
         xs={12}
