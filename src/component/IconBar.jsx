@@ -1,24 +1,26 @@
 import React from "react";
 import { Box, IconButton } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import Person2Icon from "@mui/icons-material/Person2";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import SchoolIcon from "@mui/icons-material/School";
-import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
-import BadgeIcon from "@mui/icons-material/Badge";
-import BackupTableIcon from "@mui/icons-material/BackupTable";
+import personImage from "../assets/person.png";
+import empImage from "../assets/emp.png";
+import bankImage from "../assets/bank.png";
+import documentImage from "../assets/document.png";
+
+
 
 const IconBar = ({ page }) => {
   const navigate = useNavigate();
 
 
   const allIcons = [
-    { id: "person", icon: <Person2Icon fontSize="large" />, navigateTo: "/profile-details" },
-    { id: "location", icon: <LocationOnIcon fontSize="large" />, navigateTo: "/address-details" },
-    { id: "school", icon: <SchoolIcon fontSize="large" />, navigateTo: "/course-details" },
-    { id: "account", icon: <AccountBalanceIcon fontSize="large" /> },
-    { id: "badge", icon: <BadgeIcon fontSize="large" /> },
-    { id: "backup", icon: <BackupTableIcon fontSize="large" /> },
+    { id: "person", icon: <img src={personImage}  />, navigateTo: "/profile-details" },
+    { id: "location", icon: <LocationOnIcon  />, navigateTo: "/address-details" },
+    { id: "school", icon: <SchoolIcon />, navigateTo: "/course-details" },
+    { id: "account", icon: <img src={empImage} /> },
+    { id: "badge", icon: <img src={bankImage}  /> },
+    { id: "backup", icon: <img src={documentImage}  /> },
   ];
 
 
@@ -38,7 +40,7 @@ const IconBar = ({ page }) => {
         return "#282AAE"; 
       }
 
-      return currentPageIndex === lastIndex ? "#dbdbf7" : "#282AAE"; 
+      return currentPageIndex === lastIndex ? "#c8c9f4" : "#282AAE"; 
     }
     return "transparent";
   };
@@ -70,10 +72,18 @@ const IconBar = ({ page }) => {
             backgroundColor: isLeftSide ? getBackgroundColor(item.id) : "transparent", 
            
           },
+          display: "flex", // Centers the icon within the button
+          alignItems: "center",
+          justifyContent: "center",
 
         }}
         onClick={item.navigateTo ? () => navigate(item.navigateTo) : undefined}
       >
+         <Box
+          sx={{
+            fontSize: "-5px", // Reduce the size of the icon
+          }}
+        ></Box>
         {item.icon}
       </IconButton>
     ));

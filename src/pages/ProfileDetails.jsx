@@ -67,7 +67,7 @@ const ProfileDetails = () => {
     if (!isEditMode) {
       navigate("/address-details");
     } else {
-      setEditMode(false)
+      setEditMode(false);
     }
   };
 
@@ -134,9 +134,10 @@ const ProfileDetails = () => {
 
                 {/* Form Fields */}
 
-                <Grid container spacing={3}>
+                <Grid container spacing={3} columns={{ xs: 12, sm: 12, lg : 12 }}>
                   {/* Student Name Field */}
-                  <Grid item xs={12} sm={6}>
+                 
+                  <Grid item xs={12} sm={12} lg={6}>  
                     <Field
                       as={TextField}
                       fullWidth
@@ -148,30 +149,29 @@ const ProfileDetails = () => {
                       InputLabelProps={{
                         style: {
                           color: "black",
-                          marginLeft: "-14px",
+                          marginLeft: "-5px",
                           border: "0px solid black",
-                          padding: "0px 4px",
+                          padding: "0px 10px",
+                          borderBottom: "1.7px solid #8C8C8C",
                           borderRadius: "15px",
                           backgroundColor: "white",
-                          marginTop:"-4px"
-                         
+                          marginTop: "-4px",
                         },
                       }}
                       sx={{
-                        width: "368px",
+                        width: "full",
                         height: "36px",
                         borderRadius: "10px",
                         "& .MuiInputLabel-root": {
-                          marginLeft: "-12px", 
+                          marginLeft: "-12px",
                         },
                         "& .MuiInputBase-root": {
                           height: "36px !important",
                           borderRadius: "10px !important",
-                          width: "368px",
+                          width: "auto",
                           fontWeight: "600",
                           fontSize: "14px",
                           lineHeight: "17.6px",
-                          marginLeft:"-10px",
                           backgroundColor: isEditMode ? "white" : "#DCDCDC",
                           "& .MuiInputBase-input.MuiOutlinedInput-input.Mui-disabled":
                             {
@@ -181,10 +181,9 @@ const ProfileDetails = () => {
                       }}
                     />
                   </Grid>
-
+               
                   {/* Father Name Field */}
-
-                  <Grid item xs={12} sm={6}>
+                  <Grid item xs={12} sm={12} lg={6} sx={{mr:-36}} >
                     <Field
                       as={TextField}
                       fullWidth
@@ -199,20 +198,24 @@ const ProfileDetails = () => {
                           color: "black",
                           marginLeft: "-1px",
                           border: "0px solid black",
-                          padding: "0px 4px",
+                          padding: "0px 10px",
+                          borderBottom: "1.7px solid #8C8C8C",
                           borderRadius: "15px",
                           backgroundColor: "white",
-                          marginTop:"-4px"
+                          marginTop: "-4px",
                         },
                       }}
                       sx={{
-                        width: "368px",
+                        width: "full",
                         height: "36px",
                         borderRadius: "10px",
+                        "& .MuiInputLabel-root": {
+                          marginLeft: "-12px",
+                        },
                         "& .MuiInputBase-root": {
                           height: "36px !important",
                           borderRadius: "10px !important",
-                          width: "368px",
+                          width: "auto",
                           fontWeight: "600",
                           fontSize: "14px",
                           lineHeight: "17.6px",
@@ -225,9 +228,9 @@ const ProfileDetails = () => {
                       }}
                     />
                   </Grid>
-
+               
                   {/* Date of Birth Field */}
-                  <Grid item xs={12} sm={6}>
+                  <Grid item xs={12} sm={12} lg={6}>
                     <Field
                       as={TextField}
                       fullWidth
@@ -253,12 +256,13 @@ const ProfileDetails = () => {
                       InputLabelProps={{
                         style: {
                           color: "black",
-                          marginLeft: "-14px",
+                          marginLeft: "-1px",
                           border: "0px solid black",
-                          padding: "0px 4px",
+                          padding: "0px 10px",
+                          borderBottom: "1.7px solid #8C8C8C",
                           borderRadius: "15px",
                           backgroundColor: "white",
-                          marginTop:"-4px"
+                          marginTop: "-4px",
                         },
                         shrink: "true",
                       }}
@@ -272,20 +276,18 @@ const ProfileDetails = () => {
                         ) : null,
                       }}
                       sx={{
-                        width: "368px",
-                        height: "36px",
+                        width: "full",
                         borderRadius: "10px",
                         "& .MuiInputLabel-root": {
-                          marginLeft: "-12px", 
+                          marginLeft: "-12px",
                         },
                         "& .MuiInputBase-root": {
                           height: "36px !important",
                           borderRadius: "10px !important",
-                          width: "368px",
+                          width: "auto",
                           fontWeight: "600",
                           fontSize: "14px",
                           lineHeight: "17.6px",
-                          marginLeft:"-10px",
                           backgroundColor: isEditMode ? "white" : "#DCDCDC",
                           "& .MuiInputBase-input.MuiOutlinedInput-input.Mui-disabled":
                             {
@@ -294,127 +296,19 @@ const ProfileDetails = () => {
                         },
                       }}
                     />
-                  </Grid>
-                  {/* Email Id Field */}
-                  <Grid container spacing={2}>
-                    <Grid item xs={12} sm={6} sx={{ mt: 3, ml: 3 }}>
-                      <Field
-                        as={TextField}
-                        fullWidth
-                        name="email"
-                        label="Email ID"
-                        type="email"
-                        error={touched.email && Boolean(errors.email)}
-                        helperText={touched.email && errors.email}
-                        disabled={!isEditMode}
-                        InputLabelProps={{
-                          style: {
-                            color: "black",
-                            marginLeft: "-14px",
-                            border: "0px solid black",
-                            padding: "0px 4px",
-                            borderRadius: "15px",
-                            backgroundColor: "white",
-                            marginTop:"-4px"
-                          },
-                        }}
-                        sx={{
-                          width: "368px",
-                          height: "36px",
-                          borderRadius: "10px",
-                          "& .MuiInputLabel-root": {
-                            marginLeft: "-12px", 
-                          },
-                          "& .MuiInputBase-root": {
-                            height: "36px !important",
-                            borderRadius: "10px !important",
-                            width: "368px",
-                            fontWeight: "600",
-                            fontSize: "14px",
-                            lineHeight: "17.6px",
-                            marginLeft:"-10px",
-                            backgroundColor: isEditMode ? "white" : "#DCDCDC",
-                            "& .MuiInputBase-input.MuiOutlinedInput-input.Mui-disabled":
-                              {
-                                "-webkit-text-fill-color": "black",
-                              },
-                          },
-                        }}
-                      />
-                    </Grid>
                   </Grid>
 
-                  {/* Phone Number  Field */}
-                  <Grid item xs={12} sm={6}>
-                    <Field
-                      as={TextField}
-                      fullWidth
-                      name="phoneNumber"
-                      label="Phone Number"
-                      
-                      InputLabelProps={{
-                        style: {
-                          color: "black",
-                          marginLeft: "-14px",
-                          border: "0px solid black",
-                          padding: "0px 4px",
-                          borderRadius: "15px",
-                          backgroundColor: "white",
-                          marginTop:"-4px"
-                        },
-                      }}
-                      sx={{
-                        width: "168px",
-                        height: "36px",
-                        borderRadius: "10px",
-                        "& .MuiInputLabel-root": {
-                          marginLeft: "-12px", 
-                        },
-                        "& .MuiInputBase-root": {
-                          height: "36px !important",
-                          borderRadius: "10px !important",
-                          width: "168px",
-                          fontWeight: "600",
-                          fontSize: "14px",
-                          lineHeight: "17.6px",
-                          marginLeft:"-10px",
-                          backgroundColor: isEditMode ? "white" : "#DCDCDC",
-                          "& .MuiInputBase-input.MuiOutlinedInput-input.Mui-disabled":
-                            {
-                              "-webkit-text-fill-color": "black",
-                            },
-                        },
-                      }}
-                      value={isEditMode ? `+91 - ${values.phoneNumber || ""}` : `+91 - ${values.phoneNumber || ""}`}
-                      onChange={(e) => {
-                        if (isEditMode) {
-                          const inputValue = e.target.value.replace("+91 - ", "");
-                          const phoneNumber = inputValue.replace(/[^0-9]/g, "").slice(0,10);
-                          handleChange({
-                            target: {
-                              name: "phoneNumber",
-                              value: phoneNumber,
-                            },
-                          });
-                        }
-                      }}
-                      // inputProps={{
-                      //   readOnly: !isEditMode, // Make the field read-only if not in edit mode
-                      // }}
-                      error={touched.phoneNumber && Boolean(errors.phoneNumber)}
-                      helperText={touched.phoneNumber && errors.phoneNumber}
-                      disabled={!isEditMode}
-                    />
-                  </Grid>
-                  <Grid container spacing={17.5} sx={{ ml: 3 }}>
+                  {/* Gender, Marital status */}
+                  <Grid item xs={12} sm={12} lg={6}>
                     <Grid
                       container
-                      justifyContent="flex-end"
-                      spacing={3}
-                      sx={{ paddingTop: 0, marginBottom: "13%" , marginTop:"-42px"}}
+                      spacing={1}
+                      columns={{ xs: 12, sm: 8, md: 12 }}
+                      sx={{
+                        width: "100%",
+                      }}
                     >
-                      {/* Gender  Field */}
-                      <Grid item xs={6} sm={3}>
+                      <Grid item xs={6} sm={4} md={6}>
                         <FormControl fullWidth>
                           <Field
                             name="gender"
@@ -427,25 +321,24 @@ const ProfileDetails = () => {
                                 color: "black",
                                 marginLeft: "-1px",
                                 border: "0px solid black",
-                                padding: "0px 4px",
+                                padding: "0px 10px",
+                                borderBottom: "1.7px solid #8C8C8C",
                                 borderRadius: "15px",
                                 backgroundColor: "white",
-                                marginTop:"-4px"
+                                marginTop: "-4px",
                               },
                             }}
                             sx={{
-                              width: "168px",
+                              width: "full",
                               height: "36px",
                               "& .MuiInputBase-root": {
                                 height: "36px",
                                 borderRadius: "10px",
-                                width: "180px",
+                                width: "100%",
                                 fontWeight: "600",
                                 fontSize: "14px",
                                 lineHeight: "17.6px",
                                 color: "transparent",
-
-
                                 outline: "none",
                                 boxShadow: "none",
                                 border: "none",
@@ -466,7 +359,6 @@ const ProfileDetails = () => {
                               "& .MuiInputLabel-root": {
                                 fontSize: "12px",
                                 lineHeight: "17.6px",
-
                                 transform: "translate(10px, -8px) scale(1)",
                                 outline: "none",
                                 boxShadow: "none",
@@ -489,7 +381,7 @@ const ProfileDetails = () => {
                               gap: "8px",
                               position: "absolute",
                               top: "10px",
-                              width: "130px",
+                              width: "85%",
                               height: "15px",
                               left: "16px",
                               padding: "1px",
@@ -516,7 +408,7 @@ const ProfileDetails = () => {
                               top: "0px",
                               left: "19px",
                               display: "flex",
-                              gap: "8px",
+                              gap: "4px",
                               outline: "none",
                               boxShadow: "none",
                               backgroundColor: "transparent",
@@ -563,8 +455,7 @@ const ProfileDetails = () => {
                         </FormControl>
                       </Grid>
 
-                      {/* Marital Status  Field */}
-                      <Grid item xs={6} sm={3}>
+                      <Grid item xs={6} sm={4} md={6}>
                         <FormControl fullWidth>
                           <Field
                             name="maritalStatus"
@@ -577,26 +468,27 @@ const ProfileDetails = () => {
                                 color: "black",
                                 marginLeft: "-1px",
                                 border: "0px solid black",
-                                padding: "0px 4px",
+                                padding: "0px 10px",
+                                borderBottom: "1.7px solid #8C8C8C",
                                 borderRadius: "15px",
                                 backgroundColor: "white",
-                                marginTop:"-4px"
+                                marginTop: "-4px",
                               },
                             }}
                             sx={{
-                              width: "168px",
+                              width: "auto",
                               height: "36px",
-                              marginLeft: "4px",
                               "& .MuiInputBase-root": {
                                 height: "36px",
                                 borderRadius: "10px",
-                                width: "180px",
+                                width: "100%",
                                 fontWeight: "600",
                                 fontSize: "14px",
                                 lineHeight: "17.6px",
                                 color: "transparent",
-                                boxShadow: "none",
                                 outline: "none",
+                                boxShadow: "none",
+                                border: "none",
                                 backgroundColor: isEditMode
                                   ? "white"
                                   : "#DCDCDC",
@@ -605,15 +497,28 @@ const ProfileDetails = () => {
                                     "-webkit-text-fill-color": "black",
                                   },
                               },
+                              "&.Mui-disabled": {
+                                backgroundColor: "transparent",
+                                boxShadow: "none",
+                                outline: "none",
+                                border: "none",
+                              },
                               "& .MuiInputLabel-root": {
                                 fontSize: "12px",
                                 lineHeight: "17.6px",
 
                                 transform: "translate(10px, -8px) scale(1)",
-
+                                outline: "none",
+                                boxShadow: "none",
                                 padding: "0 4px",
+                                backgroundColor: "transparent",
+                                border: "none",
                               },
-                              "& .MuiOutlinedInput-notchedOutline": {},
+                              "& .MuiOutlinedInput-notchedOutline": {
+                                outline: "none",
+                                boxShadow: "none",
+                                backgroundColor: "transparent",
+                              },
                             }}
                             // InputLabelProps={{ shrink: true }}
                             value=""
@@ -689,17 +594,79 @@ const ProfileDetails = () => {
                       </Grid>
                     </Grid>
                   </Grid>
-                  <Grid container spacing={11} sx={{ ml: 2 }}>
-                    <Grid container justifyContent="flex-end" spacing={3} sx={{marginTop:"-30px"}}>
-                      {/* Qualification Field */}
-                      <Grid item xs={6} sm={3}>
-                        <FormControl fullWidth>
-                          <InputLabel sx={{ color: "black" , marginLeft: "-1px",
+
+                  {/* Email Id Field */}
+                  <Grid item xs={12} sm={12} lg={6}>
+                    <Field
+                      as={TextField}
+                      fullWidth
+                      name="email"
+                      label="Email ID"
+                      type="email"
+                      error={touched.email && Boolean(errors.email)}
+                      helperText={touched.email && errors.email}
+                      disabled={!isEditMode}
+                      InputLabelProps={{
+                        style: {
+                          color: "black",
+                          marginLeft: "-1px",
                           border: "0px solid black",
-                          padding: "0px 4px",
+                          padding: "0px 10px",
+                          borderBottom: "1.7px solid #8C8C8C",
                           borderRadius: "15px",
                           backgroundColor: "white",
-                          marginTop:"-4px"}}>
+                          marginTop: "-4px",
+                        },
+                      }}
+                      sx={{
+                        width: "full",
+                        height: "36px",
+                        borderRadius: "10px",
+                        "& .MuiInputLabel-root": {
+                          marginLeft: "-12px",
+                        },
+                        "& .MuiInputBase-root": {
+                          height: "36px !important",
+                          borderRadius: "10px !important",
+                          width: "auto",
+                          fontWeight: "600",
+                          fontSize: "14px",
+                          lineHeight: "17.6px",
+                          backgroundColor: isEditMode ? "white" : "#DCDCDC",
+                          "& .MuiInputBase-input.MuiOutlinedInput-input.Mui-disabled":
+                            {
+                              "-webkit-text-fill-color": "black",
+                            },
+                        },
+                      }}
+                    />
+                  </Grid>
+
+                  {/* Qualification, income */}
+                  <Grid item xs={12} sm={12} lg={6}>
+                    <Grid
+                      container
+                      spacing={1}
+                      columns={{ xs: 12, sm: 8, md: 12 }}
+                      sx={{
+                        width: "100%",
+                      }}
+                    >
+                     
+                      <Grid item xs={6} sm={4} md={6}>
+                        <FormControl fullWidth>
+                          <InputLabel
+                            sx={{
+                              color: "black",
+                              marginLeft: "-1px",
+                              border: "0px solid black",
+                              padding: "0px 10px",
+                              borderBottom: "1.7px solid #8C8C8C",
+                              borderRadius: "15px",
+                              backgroundColor: "white",
+                              marginTop: "-4px",
+                            }}
+                          >
                             Qualification
                           </InputLabel>
                           <Field
@@ -708,7 +675,8 @@ const ProfileDetails = () => {
                             label="qualification"
                             disabled={!isEditMode}
                             sx={{
-                              width: "180px",
+                              // minWidth : "170px",
+                              width: "full",
                               height: "36px",
                               borderRadius: "10px",
                               fontSize: "14px",
@@ -728,9 +696,7 @@ const ProfileDetails = () => {
                           </Field>
                         </FormControl>
                       </Grid>
-
-                      {/* Monthly Income  Field */}
-                      <Grid item xs={6} sm={3}>
+                      <Grid item xs={6} sm={4} md={6} >
                         <Field
                           as={TextField}
                           fullWidth
@@ -756,21 +722,22 @@ const ProfileDetails = () => {
                               color: "black",
                               marginLeft: "-1px",
                               border: "0px solid black",
-                              padding: "0px 4px",
+                              padding: "0px 10px",
+                              borderBottom: "1.7px solid #8C8C8C",
                               borderRadius: "15px",
                               backgroundColor: "white",
-                              marginTop:"-4px"
+                              marginTop: "-4px",
                             },
                           }}
                           sx={{
-                            width: "168px",
+                            width : "auto",
+                            // minWidth: "168px",
                             height: "36px",
                             borderRadius: "10px",
-                            marginLeft: "4px",
                             "& .MuiInputBase-root": {
                               height: "36px !important",
                               borderRadius: "10px !important",
-                              width: "180px",
+                              width: "100%",
                               fontWeight: "600",
                               fontSize: "14px",
                               lineHeight: "17.6px",
@@ -783,7 +750,78 @@ const ProfileDetails = () => {
                           }}
                         />
                       </Grid>
+                    
                     </Grid>
+                  </Grid>
+
+                  {/* Phone Number  Field */}
+                  <Grid item xs={12} sm={12} lg={6}>
+                    <Field
+                      as={TextField}
+                      fullWidth
+                      name="phoneNumber"
+                      label="Phone Number"
+                      InputLabelProps={{
+                        style: {
+                          color: "black",
+                          marginLeft: "-1px",
+                          border: "0px solid black",
+                          padding: "0px 10px",
+                          borderBottom: "1.7px solid #8C8C8C",
+                          borderRadius: "15px",
+                          backgroundColor: "white",
+                          marginTop: "-4px",
+                        },
+                      }}
+                      sx={{
+                        width: "full",
+                        height: "36px",
+
+                        borderRadius: "10px",
+                        "& .MuiInputLabel-root": {
+                          marginLeft: "-12px",
+                        },
+                        "& .MuiInputBase-root": {
+                          height: "36px !important",
+                          borderRadius: "10px !important",
+                          width: "auto",
+                          fontWeight: "600",
+                          fontSize: "14px",
+                          lineHeight: "17.6px",
+                          backgroundColor: isEditMode ? "white" : "#DCDCDC",
+                          "& .MuiInputBase-input.MuiOutlinedInput-input.Mui-disabled":
+                            {
+                              "-webkit-text-fill-color": "black",
+                            },
+                        },
+                      }}
+                      value={
+                        isEditMode
+                          ? `+91 - ${values.phoneNumber || ""}`
+                          : `+91 - ${values.phoneNumber || ""}`
+                      }
+                      onChange={(e) => {
+                        if (isEditMode) {
+                          const inputValue = e.target.value.replace(
+                            "+91 - ",
+                            ""
+                          );
+                          const phoneNumber = inputValue
+                            .replace(/[^0-9]/g, "")
+                            .slice(0, 10);
+                          handleChange({
+                            target: {
+                              name: "phoneNumber",
+                              value: phoneNumber,
+                            },
+                          });
+                        }
+                      }}
+                 
+                      error={touched.phoneNumber && Boolean(errors.phoneNumber)}
+                      helperText={touched.phoneNumber && errors.phoneNumber}
+                      disabled={!isEditMode}
+                    />
                   </Grid>
                 </Grid>
               </Box>

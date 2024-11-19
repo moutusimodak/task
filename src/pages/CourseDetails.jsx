@@ -96,7 +96,7 @@ const CourseDetails = () => {
               borderRadius="15px 15px 50px 15px"
               p={4}
               bgcolor="#f7f7ff"
-              sx={{ maxWidth: 800, mx: "auto", position: "relative" }}
+              sx={{ maxWidth: 800, mx: "auto", position: "relative" , overflow:"hidden"}}
             >
               <Box marginBottom={37}>
                 <PageHeader
@@ -105,8 +105,12 @@ const CourseDetails = () => {
                   setEditMode={setEditMode}
                 />
 
-                <Grid container spacing={3}>
-                  <Grid item xs={12} sm={6}>
+                <Grid
+                  container
+                  spacing={3}
+                  columns={{ xs: 12, sm: 12, lg: 12 }}
+                >
+                  <Grid item xs={12} sm={6} lg={6}>
                     <FormControl fullWidth>
                       <InputLabel
                         sx={{
@@ -116,7 +120,7 @@ const CourseDetails = () => {
                           padding: "0px 4px",
                           borderRadius: "15px",
                           backgroundColor: "white",
-                          marginTop:"-4px"
+                          marginTop: "-4px",
                         }}
                       >
                         Course Name
@@ -149,119 +153,131 @@ const CourseDetails = () => {
                       </Field>
                     </FormControl>
                   </Grid>
-                  <Grid container spacing={2.5}>
-                    <Grid container spacing={2} sx={{ ml: 4 }}>
-                      <Grid container justifyContent="flex-end" spacing={4}>
-                        <Grid item xs={6} sm={3}>
-                          <FormControl fullWidth>
-                            <InputLabel
-                              sx={{
-                                color: "black",
-                                
-                                border: "0px solid black",
-                                padding: "0px 4px",
-                                borderRadius: "15px",
-                                backgroundColor: "white",
-                                marginTop:"-4px"
-                              }}
-                            >
-                              Course Duration
-                            </InputLabel>
-                            <Field
-                              as={Select}
-                              name="courseDuration"
-                              label="Course Durations"
-                              disabled={!isEditMode}
-                              sx={{
-                                width: "180px",
-                                height: "36px",
-                                borderRadius: "10px",
-                                fontSize: "14px",
-                                fontWeight: "600",
-                                lineHeight: "17.6px",
-
-                                backgroundColor: isEditMode
-                                  ? "white"
-                                  : "#DCDCDC",
-                                "& .MuiSelect-select.Mui-disabled": {
-                                  "-webkit-text-fill-color": "black",
-                                },
-                              }}
-                            >
-                              {courseDurations.map((duration) => (
-                                <MenuItem key={duration} value={duration}>
-                                  {duration}
-                                </MenuItem>
-                              ))}
-                            </Field>
-                          </FormControl>
-                        </Grid>
-                        <Grid item xs={6} sm={3}>
-                          <Field
-                            as={TextField}
-                            fullWidth
-                            name="courseFees"
-                            label="Course Fees"
-                            type="number"
-                            error={
-                              touched.courseFees && Boolean(errors.courseFees)
-                            }
-                            helperText={touched.courseFees && errors.courseFees}
-                            disabled={!isEditMode}
-                            InputProps={{
-                              startAdornment: (
-                                <InputAdornment position="start">
-                                  ₹
-                                </InputAdornment>
-                              ),
-                            }}
-                            InputLabelProps={{
-                              style: {
-                                color: "black",
-                                
-                                border: "0px solid black",
-                                padding: "0px 4px",
-                                borderRadius: "15px",
-                                backgroundColor: "white",
-                                marginTop:"-4px"
-                              },
-                            }}
+                  <Grid item xs={12} sm={12} lg={6} sx={{maxWidth:"100%"}}>
+                    {/* <Grid container spacing={2.5}> */}
+                    {/* <Grid container spacing={2} sx={{ ml: 4 }}> */}
+                    <Grid
+                      container
+                      spacing={2}
+                      columns={{ xs: 12, sm: 8, md: 12 }}
+                      sx={{
+                        maxWidth: "100%",
+                        flexWrap:"wrap",
+                        // overflow:"hidden"
+                      }}
+                    >
+                      <Grid item xs={6} sm={4} md={6} sx={{maxWidth:"100%",marginLeft: { xs: "-12px", sm: "0px", md: "0px" }}} > 
+                        <FormControl fullWidth>
+                          <InputLabel
                             sx={{
-                              width: "168px",
+                              color: "black",
+
+                              border: "0px solid black",
+                              padding: "0px 4px",
+                              borderRadius: "15px",
+                              backgroundColor: "white",
+                              marginTop: "-4px",
+                            }}
+                          >
+                            Course Duration
+                          </InputLabel>
+                          <Field
+                            as={Select}
+                            name="courseDuration"
+                            label="Course Durations"
+                            disabled={!isEditMode}
+                            sx={{
+                              width: "auto",
                               height: "36px",
                               borderRadius: "10px",
-                              color: "black",
-                              ml: -0.8,
-                              "& .MuiInputBase-root": {
-                                height: "36px !important",
-                                borderRadius: "10px !important",
-                                width: "180px",
-                                fontWeight: "600",
-                                fontSize: "14px",
-                                lineHeight: "17.6px",
-                                backgroundColor: isEditMode
-                                  ? "white"
-                                  : "#DCDCDC",
-                                "& .MuiInputBase-input.MuiOutlinedInput-input.Mui-disabled":
-                                  {
-                                    "-webkit-text-fill-color": "black",
-                                  },
+                              fontSize: "14px",
+                              fontWeight: "600",
+                              lineHeight: "17.6px",
+
+                              backgroundColor: isEditMode ? "white" : "#DCDCDC",
+                              "& .MuiSelect-select.Mui-disabled": {
+                                "-webkit-text-fill-color": "black",
                               },
                             }}
-                          />
-                        </Grid>
+                          >
+                            {courseDurations.map((duration) => (
+                              <MenuItem key={duration} value={duration}>
+                                {duration}
+                              </MenuItem>
+                            ))}
+                          </Field>
+                        </FormControl>
+                      </Grid>
+                      <Grid item xs={6} sm={4} md={6} sx={{  marginLeft: { xs: "12px", sm: "0px", md: "0px",lg:"px"}, }}>
+                        <Field
+                          as={TextField}
+                          fullWidth
+                          name="courseFees"
+                          label="Course Fees"
+                          type="number"
+                          error={
+                            touched.courseFees && Boolean(errors.courseFees)
+                          }
+                          helperText={touched.courseFees && errors.courseFees}
+                          disabled={!isEditMode}
+                          InputProps={{
+                            startAdornment: (
+                              <InputAdornment position="start">
+                                ₹
+                              </InputAdornment>
+                            ),
+                          }}
+                          InputLabelProps={{
+                            style: {
+                              color: "black",
+
+                              border: "0px solid black",
+                              padding: "0px 4px",
+                              borderRadius: "15px",
+                              backgroundColor: "white",
+                              marginTop: "-4px",
+                            },
+                          }}
+                          sx={{
+                            width: "auto",
+                            maxWidth: "180px",
+                            height: "36px",
+                            borderRadius: "10px",
+                            color: "black",
+                            ml: -0.8,
+                            "& .MuiInputBase-root": {
+                              height: "36px !important",
+                              borderRadius: "10px !important",
+                              width: "180px",
+                              fontWeight: "600",
+                              fontSize: "14px",
+                              lineHeight: "17.6px",
+                              backgroundColor: isEditMode ? "white" : "#DCDCDC",
+                              "& .MuiInputBase-input.MuiOutlinedInput-input.Mui-disabled":
+                                {
+                                  "-webkit-text-fill-color": "black",
+                                },
+                            },
+                          }}
+                        />
                       </Grid>
                     </Grid>
+                    {/* </Grid> */}
+                    {/* </Grid> */}
                   </Grid>
-
                   <Grid item xs={12} sm={6}>
                     <FormControl fullWidth>
-                      <InputLabel sx={{ color: "black",  marginLeft: "-14px",
+                      <InputLabel
+                        sx={{
+                          color: "black",
+                          marginLeft: "-14px",
                           border: "0px solid black",
                           padding: "0px 4px",
                           borderRadius: "15px",
                           backgroundColor: "white",
-                          marginTop:"-4px"}}>
+                          marginTop: "-4px",
+                        }}
+                      >
                         Loan Amount Preference
                       </InputLabel>
                       <Field
@@ -283,7 +299,7 @@ const CourseDetails = () => {
                           fontSize: "14px",
                           lineHeight: "17.6px",
                           marginLeft: "-10px",
-                         
+
                           backgroundColor: isEditMode ? "white" : "#DCDCDC",
                           "& .MuiSelect-select.Mui-disabled": {
                             "-webkit-text-fill-color": "black",
@@ -299,7 +315,7 @@ const CourseDetails = () => {
                     </FormControl>
                   </Grid>
 
-                  <Grid item xs={12} sm={6}>
+                  <Grid item xs={12} sm={6} sx={{marginLeft: { xs: "-12px", sm: "0px", md: "0px" }}}>
                     <Field
                       as={TextField}
                       fullWidth
@@ -323,7 +339,7 @@ const CourseDetails = () => {
                           padding: "0px 4px",
                           borderRadius: "15px",
                           backgroundColor: "white",
-                          marginTop:"-4px"
+                          marginTop: "-4px",
                         },
                       }}
                       sx={{
@@ -349,12 +365,17 @@ const CourseDetails = () => {
                   </Grid>
                   <Grid item xs={12} sm={6}>
                     <FormControl fullWidth>
-                      <InputLabel sx={{ color: "black",  marginLeft: "-14px",
+                      <InputLabel
+                        sx={{
+                          color: "black",
+                          marginLeft: "-14px",
                           border: "0px solid black",
                           padding: "0px 4px",
                           borderRadius: "15px",
                           backgroundColor: "white",
-                          marginTop:"-4px" }}>
+                          marginTop: "-4px",
+                        }}
+                      >
                         Product Type
                       </InputLabel>
                       <Field
@@ -385,25 +406,6 @@ const CourseDetails = () => {
                     </FormControl>
                   </Grid>
                 </Grid>
-              </Box>
-
-              <Box
-                display="flex"
-                justifyContent="flex-end"
-                width="90%"
-                mt={5}
-                sx={{ position: "absolute", bottom: "-0px", right: "0px" }}
-              >
-                <Button
-                  onClick={handleNextButtonClick}
-                  type="submit"
-                  variant="contained"
-                  endIcon={<SendIcon />}
-                  color="primary"
-                  sx={{ width: "30%", color: "white", backgroundColor: "blue" }}
-                >
-                  {isEditMode ? "Save" : "Next"}
-                </Button>
               </Box>
             </Box>
 

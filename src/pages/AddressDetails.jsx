@@ -171,7 +171,6 @@ const AddressDetails = () => {
                   residenceOption={residenceOption}
                   handleChange={handleChange}
                   setFieldValue={setFieldValue}
-                  
                 />
                 
               </Box>

@@ -19,7 +19,7 @@ const PageHeader = ({ title, isEditMode, setEditMode }) => {
           variant="h7"
           fontWeight="bold"
           mb={-6}
-          sx={{ fontSize: "0.9rem", color: "gray", fontWeight: "800" , marginTop:"-109px" , marginLeft:"-20px"}}
+          sx={{ fontSize: "0.9rem", color: "gray", fontWeight: "800" , marginTop:"-120px" , marginLeft:"-20px", fontFamily:"Source Sans Pro"}}
         >
           {title} 
         </Typography>
@@ -28,7 +28,7 @@ const PageHeader = ({ title, isEditMode, setEditMode }) => {
           color="black"
           startIcon={<EditIcon />}
           onClick={() => setEditMode(!isEditMode)}
-          sx={{ height: "23.61px", width: "57px", marginTop:"-100px" , marginRight:"-8px"}}
+          sx={{ height: "28px", width: "67px", marginTop:"-100px" , marginRight:"-1px", textTransform:"none", fontWeight:"bold"}}
         >
           Edit
         </Button>
