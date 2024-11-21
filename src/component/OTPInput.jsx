@@ -10,9 +10,9 @@ const OTPInput = ({ index, value, onChange, onKeyDown, id, showOtp }) => (
     inputProps={{ maxLength: 1 }}
     variant="outlined"
     sx={{
-      width: "40px",
-      height: "40px",
-      margin: "0 5px",
+      width:"40px",
+      height:"40px",
+      // margin: "5px",
       fontSize: "18px",
       textAlign: "center",
     }}

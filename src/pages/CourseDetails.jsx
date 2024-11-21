@@ -7,11 +7,11 @@ import IconBar from "../component/IconBar";
 import PageHeader from "../component/PageHeader";
 import ActionButton from "../component/ActionButton";
 
-import SendIcon from "@mui/icons-material/Send";
+
 import InputAdornment from "@mui/material/InputAdornment";
 
 import {
-  Button,
+
   TextField,
   MenuItem,
   Select,
@@ -81,7 +81,7 @@ const CourseDetails = () => {
             justifyContent="center"
             minHeight="50vh"
             marginTop="8%"
-            sx={{ maxWidth: 800, mx: "auto", position: "relative" }}
+            sx={{ maxWidth: 800, mx: "auto", position: "relative"}}
           >
             <IconBar page="course" />
 
@@ -96,7 +96,11 @@ const CourseDetails = () => {
               borderRadius="15px 15px 50px 15px"
               p={4}
               bgcolor="#f7f7ff"
-              sx={{ maxWidth: 800, mx: "auto", position: "relative" , overflow:"hidden"}}
+              sx={{
+                maxWidth: 800,
+                mx: "auto",
+                position: "relative",
+              }}
             >
               <Box marginBottom={37}>
                 <PageHeader
@@ -105,19 +109,16 @@ const CourseDetails = () => {
                   setEditMode={setEditMode}
                 />
 
-                <Grid
-                  container
-                  spacing={3}
-                  columns={{ xs: 12, sm: 12, lg: 12 }}
-                >
-                  <Grid item xs={12} sm={6} lg={6}>
+                <Grid container spacing={3}>
+                  <Grid item xs={12} sm={12} md={6}>
                     <FormControl fullWidth>
                       <InputLabel
                         sx={{
                           color: "black",
                           marginLeft: "-14px",
                           border: "0px solid black",
-                          padding: "0px 4px",
+                          padding: "0px 10px",
+                          borderBottom: "1.9px solid #8C8C8C",
                           borderRadius: "15px",
                           backgroundColor: "white",
                           marginTop: "-4px",
@@ -131,7 +132,7 @@ const CourseDetails = () => {
                         label="Course Name"
                         disabled={!isEditMode}
                         sx={{
-                          width: "368px",
+                          width: "full",
                           height: "36px",
                           borderRadius: "10px",
                           fontWeight: "600 ",
@@ -153,27 +154,18 @@ const CourseDetails = () => {
                       </Field>
                     </FormControl>
                   </Grid>
-                  <Grid item xs={12} sm={12} lg={6} sx={{maxWidth:"100%"}}>
-                    {/* <Grid container spacing={2.5}> */}
-                    {/* <Grid container spacing={2} sx={{ ml: 4 }}> */}
-                    <Grid
-                      container
-                      spacing={2}
-                      columns={{ xs: 12, sm: 8, md: 12 }}
-                      sx={{
-                        maxWidth: "100%",
-                        flexWrap:"wrap",
-                        // overflow:"hidden"
-                      }}
-                    >
-                      <Grid item xs={6} sm={4} md={6} sx={{maxWidth:"100%",marginLeft: { xs: "-12px", sm: "0px", md: "0px" }}} > 
+
+                  <Grid item xs={12} sm={12} md={6}>
+                    <Grid container spacing={1}>
+                      <Grid item xs={6} sm={6} md={6} marginLeft={-1}>
                         <FormControl fullWidth>
                           <InputLabel
                             sx={{
                               color: "black",
-
+                              marginLeft: "-3px",
                               border: "0px solid black",
-                              padding: "0px 4px",
+                              padding: "0px 10px",
+                              borderBottom: "1.9px solid #8C8C8C",
                               borderRadius: "15px",
                               backgroundColor: "white",
                               marginTop: "-4px",
@@ -208,13 +200,14 @@ const CourseDetails = () => {
                           </Field>
                         </FormControl>
                       </Grid>
-                      <Grid item xs={6} sm={4} md={6} sx={{  marginLeft: { xs: "12px", sm: "0px", md: "0px",lg:"px"}, }}>
+
+                      <Grid item xs={6} sm={6} md={6}>
                         <Field
                           as={TextField}
                           fullWidth
-                          name="courseFees"
-                          label="Course Fees"
                           type="number"
+                          name="courseFees"
+                          label="Course Fee"
                           error={
                             touched.courseFees && Boolean(errors.courseFees)
                           }
@@ -230,28 +223,26 @@ const CourseDetails = () => {
                           InputLabelProps={{
                             style: {
                               color: "black",
-
+                              marginLeft: "7px",
                               border: "0px solid black",
-                              padding: "0px 4px",
+                              padding: "0px 10px",
+                              borderBottom: "1.9px solid #8C8C8C",
                               borderRadius: "15px",
                               backgroundColor: "white",
                               marginTop: "-4px",
                             },
                           }}
                           sx={{
-                            width: "auto",
-                            maxWidth: "180px",
                             height: "36px",
                             borderRadius: "10px",
-                            color: "black",
-                            ml: -0.8,
                             "& .MuiInputBase-root": {
                               height: "36px !important",
                               borderRadius: "10px !important",
-                              width: "180px",
+                              width: "100%",
                               fontWeight: "600",
                               fontSize: "14px",
                               lineHeight: "17.6px",
+                              marginLeft: "9px",
                               backgroundColor: isEditMode ? "white" : "#DCDCDC",
                               "& .MuiInputBase-input.MuiOutlinedInput-input.Mui-disabled":
                                 {
@@ -262,17 +253,17 @@ const CourseDetails = () => {
                         />
                       </Grid>
                     </Grid>
-                    {/* </Grid> */}
-                    {/* </Grid> */}
                   </Grid>
-                  <Grid item xs={12} sm={6}>
+
+                  <Grid item xs={12} sm={12} md={6}>
                     <FormControl fullWidth>
                       <InputLabel
                         sx={{
                           color: "black",
                           marginLeft: "-14px",
                           border: "0px solid black",
-                          padding: "0px 4px",
+                          padding: "0px 10px",
+                          borderBottom: "1.9px solid #8C8C8C",
                           borderRadius: "15px",
                           backgroundColor: "white",
                           marginTop: "-4px",
@@ -292,7 +283,7 @@ const CourseDetails = () => {
                         }
                         disabled={!isEditMode}
                         sx={{
-                          width: "368px",
+                          width: "auto",
                           height: "36px",
                           borderRadius: "10px",
                           fontWeight: "600 ",
@@ -315,7 +306,7 @@ const CourseDetails = () => {
                     </FormControl>
                   </Grid>
 
-                  <Grid item xs={12} sm={6} sx={{marginLeft: { xs: "-12px", sm: "0px", md: "0px" }}}>
+                  <Grid item xs={12} sm={12} md={6} lg={6} marginLeft={-1}>
                     <Field
                       as={TextField}
                       fullWidth
@@ -334,43 +325,55 @@ const CourseDetails = () => {
                       InputLabelProps={{
                         style: {
                           color: "black",
-                          marginLeft: "-1px",
+                          marginLeft: "-5px",
                           border: "0px solid black",
-                          padding: "0px 4px",
+                          padding: "0px 10px",
+                          borderBottom: "1.9px solid #8C8C8C",
                           borderRadius: "15px",
                           backgroundColor: "white",
                           marginTop: "-4px",
                         },
                       }}
-                      sx={{
-                        width: "368px",
+                      sx={(theme) => ({
+                        width: "full",
                         height: "36px",
                         borderRadius: "10px",
+                        "& .MuiInputLabel-root": {
+                          marginLeft: "-12px",
+                        },
                         "& .MuiInputBase-root": {
                           height: "36px !important",
                           borderRadius: "10px !important",
-                          width: "368px",
                           fontWeight: "600",
                           fontSize: "14px",
                           lineHeight: "17.6px",
-                          marginLeft: "0px",
                           backgroundColor: isEditMode ? "white" : "#DCDCDC",
+                          width: "103%",
+
+                          [theme.breakpoints.down("md")]: {
+                            width: "101%",
+                          },
+                          [theme.breakpoints.down("sm")]: {
+                            width: "102%",
+                          },
                           "& .MuiInputBase-input.MuiOutlinedInput-input.Mui-disabled":
                             {
                               "-webkit-text-fill-color": "black",
                             },
                         },
-                      }}
+                      })}
                     />
                   </Grid>
-                  <Grid item xs={12} sm={6}>
+
+                  <Grid item xs={12} sm={12} md={6}>
                     <FormControl fullWidth>
                       <InputLabel
                         sx={{
                           color: "black",
                           marginLeft: "-14px",
                           border: "0px solid black",
-                          padding: "0px 4px",
+                          padding: "0px 10px",
+                          borderBottom: "1.9px solid #8C8C8C",
                           borderRadius: "15px",
                           backgroundColor: "white",
                           marginTop: "-4px",
@@ -384,7 +387,7 @@ const CourseDetails = () => {
                         label="Product Type"
                         disabled={!isEditMode}
                         sx={{
-                          width: "368px",
+                          width: "full",
                           height: "36px",
                           borderRadius: "10px",
                           fontWeight: "600 ",
@@ -406,6 +409,8 @@ const CourseDetails = () => {
                     </FormControl>
                   </Grid>
                 </Grid>
+
+                
               </Box>
             </Box>
 

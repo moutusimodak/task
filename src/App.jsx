@@ -5,7 +5,10 @@ import AddressDetails from "./pages/AddressDetails";
 import CourseDetails from "./pages/CourseDetails";
 import FooterSection from "./component/FooterSection";
 
+import Try from "./component/Try";
+
 import './App.css'
+import ThankYou from "./pages/ThankYou";
 
 const App = () => {
   return (
@@ -14,8 +17,9 @@ const App = () => {
         <Route path="/" element={< PhoneVerification/>} />
         <Route path="/profile-details" element={<ProfileDetails />} />
         <Route path="/address-details" element={<AddressDetails />} />
-        <Route path="/course-details" element={<CourseDetails />} />
+        <Route path="/course-details" element={<Try />} />
         <Route path="/footer-details" element={<FooterSection />} />
+        <Route path="/thankyou" element={<ThankYou />} />
       </Routes>
     </Router>
   );

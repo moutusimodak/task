@@ -42,7 +42,7 @@ const AddressDetails = () => {
     if (!isEditMode) {
       navigate("/course-details");
     } else {
-      setEditMode(false)
+      setEditMode(false);
     }
   };
 
@@ -107,12 +107,11 @@ const AddressDetails = () => {
                   "polygon(100% 0, 100% 93%, 75% 93%, 75% 100%, 0 100%, 0% 60%, 0 0)",
               }}
             >
-              <Box marginBottom={20} sx={{marginTop:"0px"}}>
-                <PageHeader 
+              <Box marginBottom={20} sx={{ marginTop: "0px" }}>
+                <PageHeader
                   title="ADDRESS DETAILS"
                   isEditMode={isEditMode}
                   setEditMode={setEditMode}
-                  
                 />
                 {/* Current Address Section */}
                 <CurrentResidence
@@ -133,7 +132,7 @@ const AddressDetails = () => {
                   }}
                   control={
                     <Checkbox
-                    sx={{marginLeft:"-10px"}}
+                      sx={{ marginLeft: "-10px" }}
                       checked={sameAsPermanent}
                       onChange={(e) => {
                         setSameAsPermanent(e.target.checked);
@@ -172,7 +171,6 @@ const AddressDetails = () => {
                   handleChange={handleChange}
                   setFieldValue={setFieldValue}
                 />
-                
               </Box>
             </Box>
             {/* Submit Button */}

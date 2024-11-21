@@ -19,19 +19,35 @@ const PageHeader = ({ title, isEditMode, setEditMode }) => {
           variant="h7"
           fontWeight="bold"
           mb={-6}
-          sx={{ fontSize: "0.9rem", color: "gray", fontWeight: "800" , marginTop:"-120px" , marginLeft:"-20px", fontFamily:"Source Sans Pro"}}
+          sx={{
+            fontSize: "0.9rem",
+            color: "gray",
+            fontWeight: "800",
+            marginTop: "-120px",
+            marginLeft: "-20px",
+            fontFamily: "Source Sans Pro",
+          }}
         >
-          {title} 
+          {title}
         </Typography>
+        {!isEditMode && (
         <Button
           variant="outlined"
           color="black"
           startIcon={<EditIcon />}
-          onClick={() => setEditMode(!isEditMode)}
-          sx={{ height: "28px", width: "67px", marginTop:"-100px" , marginRight:"-1px", textTransform:"none", fontWeight:"bold"}}
+          onClick={() => setEditMode(true)}
+          sx={{
+            height: "28px",
+            width: "67px",
+            marginTop: "-100px",
+            marginRight: "-1px",
+            textTransform: "none",
+            fontWeight: "bold",
+          }}
         >
           Edit
         </Button>
+        )}
       </Box>
     </Box>
   );

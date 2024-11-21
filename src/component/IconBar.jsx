@@ -89,7 +89,7 @@ const IconBar = ({ page }) => {
     ));
 
   return (
-    <Box display="flex" justifyContent="space-between" width="100%" mb={-2}>
+    <Box display="flex" justifyContent="space-between" width="100%">
       {/* Left Side Icons */}
       <Box display="flex" justifyContent="center" gap={2}>
         {renderIcons(leftIcons, true)}

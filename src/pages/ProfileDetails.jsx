@@ -116,13 +116,14 @@ const ProfileDetails = () => {
               flexDirection="column"
               alignItems="center"
               justifyContent="center"
+              
               minHeight="50vh"
               marginTop="4%"
               border="1px solid #d3d3d3 "
               borderRadius="15px 15px 50px 15px"
               p={4}
               bgcolor="#f7f7ff"
-              sx={{ maxWidth: 800, mx: "auto", position: "relative" }}
+              sx={{ maxWidth: 800, mx: "auto", position: "relative", minHeight:{xs:"0vh",sm:"50vh"} }}
             >
               {/* Title and Edit Button */}
               <Box marginBottom={30}>
@@ -134,10 +135,14 @@ const ProfileDetails = () => {
 
                 {/* Form Fields */}
 
-                <Grid container spacing={3} columns={{ xs: 12, sm: 12, lg : 12 }}>
+                <Grid
+                  container
+                  spacing={3}
+                  columns={{ xs: 12, sm: 12, lg: 12 }}
+                >
                   {/* Student Name Field */}
-                 
-                  <Grid item xs={12} sm={12} lg={6}>  
+
+                  <Grid item xs={12} sm={12} lg={6}>
                     <Field
                       as={TextField}
                       fullWidth
@@ -152,7 +157,7 @@ const ProfileDetails = () => {
                           marginLeft: "-5px",
                           border: "0px solid black",
                           padding: "0px 10px",
-                          borderBottom: "1.7px solid #8C8C8C",
+                          borderBottom: "1.9px solid #8C8C8C",
                           borderRadius: "15px",
                           backgroundColor: "white",
                           marginTop: "-4px",
@@ -181,9 +186,9 @@ const ProfileDetails = () => {
                       }}
                     />
                   </Grid>
-               
+
                   {/* Father Name Field */}
-                  <Grid item xs={12} sm={12} lg={6} sx={{mr:-36}} >
+                  <Grid item xs={12} sm={12} lg={6}>
                     <Field
                       as={TextField}
                       fullWidth
@@ -199,7 +204,7 @@ const ProfileDetails = () => {
                           marginLeft: "-1px",
                           border: "0px solid black",
                           padding: "0px 10px",
-                          borderBottom: "1.7px solid #8C8C8C",
+                          borderBottom: "1.9px solid #8C8C8C",
                           borderRadius: "15px",
                           backgroundColor: "white",
                           marginTop: "-4px",
@@ -228,7 +233,7 @@ const ProfileDetails = () => {
                       }}
                     />
                   </Grid>
-               
+
                   {/* Date of Birth Field */}
                   <Grid item xs={12} sm={12} lg={6}>
                     <Field
@@ -259,7 +264,7 @@ const ProfileDetails = () => {
                           marginLeft: "-1px",
                           border: "0px solid black",
                           padding: "0px 10px",
-                          borderBottom: "1.7px solid #8C8C8C",
+                          borderBottom: "1.9px solid #8C8C8C",
                           borderRadius: "15px",
                           backgroundColor: "white",
                           marginTop: "-4px",
@@ -303,12 +308,11 @@ const ProfileDetails = () => {
                     <Grid
                       container
                       spacing={1}
-                      columns={{ xs: 12, sm: 8, md: 12 }}
                       sx={{
                         width: "100%",
                       }}
                     >
-                      <Grid item xs={6} sm={4} md={6}>
+                      <Grid item xs={6} sm={6} md={6}>
                         <FormControl fullWidth>
                           <Field
                             name="gender"
@@ -322,7 +326,7 @@ const ProfileDetails = () => {
                                 marginLeft: "-1px",
                                 border: "0px solid black",
                                 padding: "0px 10px",
-                                borderBottom: "1.7px solid #8C8C8C",
+                                borderBottom: "1.9px solid #8C8C8C",
                                 borderRadius: "15px",
                                 backgroundColor: "white",
                                 marginTop: "-4px",
@@ -372,26 +376,10 @@ const ProfileDetails = () => {
                                 backgroundColor: "transparent",
                               },
                             }}
-                            // InputLabelProps={{ shrink: true }}
+
                             value=""
                           />
-                          <Box
-                            sx={{
-                              display: "flex",
-                              gap: "8px",
-                              position: "absolute",
-                              top: "10px",
-                              width: "85%",
-                              height: "15px",
-                              left: "16px",
-                              padding: "1px",
-                              borderRadius: "4px",
-                              border: "1px solid #ccc",
-                              backgroundColor: "transparent",
-                              justifyContent: "space-around",
-                              alignItems: "center",
-                            }}
-                          ></Box>
+                        
                           <ToggleButtonGroup
                             value={values.gender}
                             exclusive
@@ -406,23 +394,27 @@ const ProfileDetails = () => {
                             sx={{
                               position: "absolute",
                               top: "0px",
-                              left: "19px",
+                              left: "",
                               display: "flex",
-                              gap: "4px",
+                              justifyContent: "space-between", 
+                              width: "100%", 
                               outline: "none",
                               boxShadow: "none",
+                              height: "50%",
+                              marginTop: "8px",
                               backgroundColor: "transparent",
                               "& .MuiToggleButton-root": {
+                                flex: "1 1 calc(50% - 8px)", 
                                 border: "none",
                                 fontSize: "10px",
                                 fontWeight: "600",
+
                                 boxShadow: "none",
                                 outline: "none",
                                 backgroundColor: "transparent",
-
+                                textAlign: "center",
                                 "&.Mui-selected": {
                                   color: "black",
-                                  backgroundColor: "transparent",
                                   boxShadow: "none",
                                   outline: "none",
                                   border: "none",
@@ -434,7 +426,7 @@ const ProfileDetails = () => {
                                   backgroundColor: "transparent",
                                 },
                                 "&:hover": {
-                                  backgroundColor: "transparent",
+                                  backgroundColor: "rgba(0, 0, 0, 0.1)",
                                   boxShadow: "none",
                                   color: "black",
                                   outline: "none",
@@ -455,7 +447,7 @@ const ProfileDetails = () => {
                         </FormControl>
                       </Grid>
 
-                      <Grid item xs={6} sm={4} md={6}>
+                      <Grid item xs={6} sm={6} md={6}>
                         <FormControl fullWidth>
                           <Field
                             name="maritalStatus"
@@ -466,10 +458,10 @@ const ProfileDetails = () => {
                             InputLabelProps={{
                               style: {
                                 color: "black",
-                                marginLeft: "-1px",
+                                marginLeft: "7px",
                                 border: "0px solid black",
                                 padding: "0px 10px",
-                                borderBottom: "1.7px solid #8C8C8C",
+                                borderBottom: "1.9px solid #8C8C8C",
                                 borderRadius: "15px",
                                 backgroundColor: "white",
                                 marginTop: "-4px",
@@ -489,7 +481,7 @@ const ProfileDetails = () => {
                                 outline: "none",
                                 boxShadow: "none",
                                 border: "none",
-                                marginLeft:"9px",
+                                marginLeft: "9px",
                                 backgroundColor: isEditMode
                                   ? "white"
                                   : "#DCDCDC",
@@ -521,26 +513,10 @@ const ProfileDetails = () => {
                                 backgroundColor: "transparent",
                               },
                             }}
-                            // InputLabelProps={{ shrink: true }}
+                         
                             value=""
                           />
-                          <Box
-                            sx={{
-                              display: "flex",
-                              gap: "8px",
-                              position: "absolute",
-                              top: "10px",
-                              width: "130px",
-                              height: "15px",
-                              left: "16px",
-                              padding: "1px",
-                              borderRadius: "4px",
-                              border: "1px solid #ccc",
-                              backgroundColor: "transparent",
-                              justifyContent: "space-around",
-                              alignItems: "center",
-                            }}
-                          ></Box>
+                       
                           <ToggleButtonGroup
                             value={values.maritalStatus}
                             exclusive
@@ -556,28 +532,46 @@ const ProfileDetails = () => {
                             }}
                             disabled={!isEditMode}
                             sx={{
+                              marginLeft: "6px",
                               position: "absolute",
                               top: "0px",
-                              left: "19px",
+                              left: "",
                               display: "flex",
-                              gap: "8px",
+                              justifyContent: "space-between",
+                              width: "100%",
+                              outline: "none",
+                              boxShadow: "none",
+                              height: "50%",
+                              marginTop: "8px",
+                              backgroundColor: "transparent",
                               "& .MuiToggleButton-root": {
+                                flex: "1 1 calc(50% - 8px)",
                                 border: "none",
                                 fontSize: "10px",
                                 fontWeight: "600",
+
                                 boxShadow: "none",
                                 outline: "none",
-
+                                backgroundColor: "transparent",
+                                textAlign: "center",
                                 "&.Mui-selected": {
                                   color: "black",
-                                  backgroundColor: "transparent",
-                                  boxShadow: "none",
-                                },
-                                "&:hover": {
-                                  backgroundColor: "transparent",
                                   boxShadow: "none",
                                   outline: "none",
+                                  border: "none",
+                                },
+                                "&.Mui-disabled": {
+                                  border: "none",
+                                  boxShadow: "none",
+                                  outline: "none",
+                                  backgroundColor: "transparent",
+                                },
+                                "&:hover": {
+                                  backgroundColor: "rgba(0, 0, 0, 0.1)",
+                                  boxShadow: "none",
                                   color: "black",
+                                  outline: "none",
+                                  border: "none",
                                 },
                               },
                             }}
@@ -613,7 +607,7 @@ const ProfileDetails = () => {
                           marginLeft: "-1px",
                           border: "0px solid black",
                           padding: "0px 10px",
-                          borderBottom: "1.7px solid #8C8C8C",
+                          borderBottom: "1.9px solid #8C8C8C",
                           borderRadius: "15px",
                           backgroundColor: "white",
                           marginTop: "-4px",
@@ -653,7 +647,6 @@ const ProfileDetails = () => {
                         width: "100%",
                       }}
                     >
-                     
                       <Grid item xs={6} sm={4} md={6}>
                         <FormControl fullWidth>
                           <InputLabel
@@ -662,7 +655,7 @@ const ProfileDetails = () => {
                               marginLeft: "-1px",
                               border: "0px solid black",
                               padding: "0px 10px",
-                              borderBottom: "1.7px solid #8C8C8C",
+                              borderBottom: "1.9px solid #8C8C8C",
                               borderRadius: "15px",
                               backgroundColor: "white",
                               marginTop: "-4px",
@@ -676,7 +669,6 @@ const ProfileDetails = () => {
                             label="qualification"
                             disabled={!isEditMode}
                             sx={{
-                              // minWidth : "170px",
                               width: "full",
                               height: "36px",
                               borderRadius: "10px",
@@ -697,7 +689,7 @@ const ProfileDetails = () => {
                           </Field>
                         </FormControl>
                       </Grid>
-                      <Grid item xs={6} sm={4} md={6} >
+                      <Grid item xs={6} sm={4} md={6}>
                         <Field
                           as={TextField}
                           fullWidth
@@ -721,18 +713,16 @@ const ProfileDetails = () => {
                           InputLabelProps={{
                             style: {
                               color: "black",
-                              marginLeft: "-1px",
+                              marginLeft: "7px",
                               border: "0px solid black",
                               padding: "0px 10px",
-                              borderBottom: "1.7px solid #8C8C8C",
+                              borderBottom: "1.9px solid #8C8C8C",
                               borderRadius: "15px",
                               backgroundColor: "white",
                               marginTop: "-4px",
                             },
                           }}
                           sx={{
-                            width : "auto",
-                            // minWidth: "168px",
                             height: "36px",
                             borderRadius: "10px",
                             "& .MuiInputBase-root": {
@@ -742,7 +732,7 @@ const ProfileDetails = () => {
                               fontWeight: "600",
                               fontSize: "14px",
                               lineHeight: "17.6px",
-                              marginLeft:"9px",
+                              marginLeft: "9px",
                               backgroundColor: isEditMode ? "white" : "#DCDCDC",
                               "& .MuiInputBase-input.MuiOutlinedInput-input.Mui-disabled":
                                 {
@@ -752,7 +742,6 @@ const ProfileDetails = () => {
                           }}
                         />
                       </Grid>
-                    
                     </Grid>
                   </Grid>
 
@@ -769,11 +758,10 @@ const ProfileDetails = () => {
                           marginLeft: "-1px",
                           border: "0px solid black",
                           padding: "0px 10px",
-                          borderBottom: "1.7px solid #8C8C8C",
+                          borderBottom: "1.9px solid #8C8C8C",
                           borderRadius: "15px",
                           backgroundColor: "white",
                           marginTop: "-4px",
-                          
                         },
                       }}
                       sx={{
@@ -820,13 +808,14 @@ const ProfileDetails = () => {
                           });
                         }
                       }}
-                 
                       error={touched.phoneNumber && Boolean(errors.phoneNumber)}
                       helperText={touched.phoneNumber && errors.phoneNumber}
                       disabled={!isEditMode}
                     />
                   </Grid>
                 </Grid>
+
+                
               </Box>
             </Box>
             <ActionButton

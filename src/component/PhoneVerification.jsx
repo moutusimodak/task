@@ -10,13 +10,17 @@ import {
   Typography,
   IconButton,
   Link,
+  InputAdornment,
 } from "@mui/material";
 
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 
+import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
+
 import OTPInput from "./OTPInput";
 
 const initialState = {
+  
   phoneNumber: "",
   otp: "",
   generatedOtp: "",
@@ -166,20 +170,22 @@ const PhoneVerification = () => {
   ]);
 
   return (
-    <Box
+
+    <Box 
       sx={{
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        height: "100vh",
+        minHeight: "100vh",
+        boxSizing:"border-box",
         width: "100%",
-        padding: "20px",
+        padding: "16px",
       }}
     >
       <Box
         sx={{
-          marginBottom: "30px",
+          marginBottom: "20px",
           padding: "20px",
           borderRadius: "8px",
           width: "100%",
@@ -187,7 +193,7 @@ const PhoneVerification = () => {
           textAlign: "center",
         }}
       >
-        <Typography variant="h5">Verify Your Phone Number</Typography>
+        <Typography variant="h5" sx={{fontSize:{xs:"1.5rem", md:"2rem"}}}>Verify Your Phone Number</Typography>
       </Box>
 
       <Box
@@ -212,17 +218,31 @@ const PhoneVerification = () => {
             marginBottom: "20px",
           }}
         >
-          <TextField
-            label="Phone Number"
-            value={state.phoneNumber}
-            onChange={handlePhoneNumberChange}
-            variant="outlined"
-            sx={{
-              width: "80%",
+          
+
+            <TextField
+
+          label={
+            <Box sx={{ display: "flex", alignItems: "center" }}>
+              <PhoneIphoneIcon sx={{ marginRight: "8px", color: "grey.600",fontSize:"1.2rem" }} />
+              Phone Number
+            </Box>
+          }
+          value={state.phoneNumber}
+          onChange={handlePhoneNumberChange}
+          id="outlined-start-adornment"
+           sx={{
+              width: "100%",
+              maxWidth:"400px",
               marginBottom: "10px",
             }}
-            inputProps={{ maxLength: 10 }}
-          />
+          slotProps={{
+            input: {
+              startAdornment: <InputAdornment position="start">  +91</InputAdornment>,
+            },
+          }}
+          inputProps={{ maxLength: 10 }}
+        />
           <Link
             component="button"
             onClick={handleGenerateOtp}
@@ -246,8 +266,12 @@ const PhoneVerification = () => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              marginTop: "20px",
+            
+              marginTop: "24px",
+              gap:"8px",
               width: "100%",
+              flexWrap:"wrap",
+            
             }}
           >
             {state.otpInputs.map((value, index) => (
@@ -263,7 +287,7 @@ const PhoneVerification = () => {
             ))}
             <IconButton
               onClick={() => dispatch({ type: "TOGGLE_OTP_VISIBILITY" })}
-              sx={{ marginLeft: "10px" }}
+              sx={{ display:"flex", justifyContent:"center", alignItems:"center",borderRadius:"4px"}}
             >
               {state.showOtp ? <VisibilityOff /> : <Visibility />}
             </IconButton>
@@ -271,15 +295,19 @@ const PhoneVerification = () => {
         )}
 
         {state.isOtpSent && (
-          <Box sx={{ marginTop: "50px", width: "100%" }}>
+          <Box sx={{ marginTop: "30px", width: "100%" }}>
             <Button
               variant="contained"
               fullWidth
               onClick={() => dispatch({ type: "VERIFY_OTP" })}
+              disabled={state.otpInputs.some((input)=>input=== "")}
               sx={{
-                backgroundColor: "primary.main",
+                backgroundColor: state.otpInputs.some((input) => input === "")?
+                "grey.400" :"primary.main",
                 "&:hover": {
-                  backgroundColor: "primary.dark",
+                  backgroundColor: state.otpInputs.some((input) => input === "")
+                  ? "grey.400" 
+                  : "primary.dark",
                 },
               }}
             >
@@ -303,6 +331,7 @@ const PhoneVerification = () => {
         </Alert>
       </Snackbar>
     </Box>
+  
   );
 };
 

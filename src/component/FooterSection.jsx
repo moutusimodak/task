@@ -2,11 +2,14 @@
 import React, { useState } from 'react';
 import { Checkbox, Button, Snackbar, Typography, Link, FormControlLabel, Box } from '@mui/material';
 import MuiAlert from '@mui/material/Alert';
+import { useNavigate } from 'react-router-dom';
+
+
 
 const FooterSection = () => {
   const [isChecked, setIsChecked] = useState(false);
   const [openSnackbar, setOpenSnackbar] = useState(false);
-
+  const navigate = useNavigate(); 
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
@@ -17,6 +20,9 @@ const FooterSection = () => {
     event.preventDefault();
     if (isChecked) {
       setOpenSnackbar(true);
+      setTimeout(()=>{
+        navigate('/thankyou')
+      })
     }
   };
 

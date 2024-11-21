@@ -25,7 +25,7 @@ const ActionButton = ({ onClick, isEditMode }) => {
         endIcon={<KeyboardArrowRightIcon />}
         color="primary"
         sx={{ width: "100%", color: "white", backgroundColor: "#282AAE", letterSpacing:"3px", fontWeight:"bold", borderRadius:"10px", background: "linear-gradient( #282AAE, #0D0F5E)", "&:hover": {
-          background: "linear-gradient(to left, #282AAE, #0D0F5E)", // Gradient direction change on hover
+          background: "linear-gradient(to left, #282AAE, #0D0F5E)", 
         }, }}
       >
         {isEditMode ? "Save" : "Next"}
