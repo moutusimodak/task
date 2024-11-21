@@ -1,15 +1,29 @@
-import React, { useState } from "react";
+import React, { useState,useEffect} from "react";
 import { Box, Button, Typography } from "@mui/material";
 
 import { useNavigate } from "react-router-dom";
 import ActionButton from "./ActionButton";
 import PageHeader from "./PageHeader";
 import IconBar from "./IconBar";
+import ProfileDetails from "../pages/ProfileDetails";
+import AddressDetails from "../pages/AddressDetails";
 import Course from "../pages/Course";
 
 
-const Try = () => {
+const Try = ({page}) => {
     const [isEditMode, setEditMode] = useState(false);
+     const [RenderComponent, setRenderComponent] = useState(() => ProfileDetails);
+
+    useEffect(()=>{
+        if (page === 1) {
+      setRenderComponent(() => ProfileDetails);
+    } else if (page === 2) {
+      setRenderComponent(() => AddressDetails);
+    } else if (page === 3) {
+      setRenderComponent(() => Course);
+    }
+    },[page])
+
   const navigate = useNavigate();
   const handleNextButtonClick = (isValid, isTouched) => {
     if (!isEditMode) {
@@ -18,7 +32,7 @@ const Try = () => {
       if (isValid && isTouched) {
         setEditMode(false);
       }
-    }
+    }   
   };
   return (
     <Box
@@ -55,15 +69,7 @@ const Try = () => {
                   isEditMode={isEditMode}
                   setEditMode={setEditMode}
                 />
-                {/* grid part */}
-
-              {
-                
-              }
-              <Course/>
-              
-
-
+                <RenderComponent/>
                 </Box>
                 </Box>
 
@@ -72,6 +78,7 @@ const Try = () => {
               isEditMode={isEditMode}
             />
           </Box>
+          
   );
 };
 

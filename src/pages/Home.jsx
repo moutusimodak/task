@@ -1,8 +1,8 @@
 import Try from "../component/Try";
 
-function Home(prop) {
+function Home({prop}) {
     return(
-        <Try prop={prop}/>
+        <Try page={prop}/>
         
     )
 }

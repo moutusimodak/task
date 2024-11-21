@@ -101,7 +101,7 @@ const ProfileDetails = () => {
         setFieldValue,
       }) => (
         <Form onSubmit={handleSubmit}>
-          <Box
+          {/* <Box
             display="flex"
             flexDirection="column"
             alignItems="center"
@@ -110,8 +110,8 @@ const ProfileDetails = () => {
             marginTop="8%"
             sx={{ maxWidth: 800, mx: "auto", position: "relative" }}
           >
-            <IconBar page="profile" />
-            <Box
+            <IconBar page="profile" /> */}
+            {/* <Box
               display="flex"
               flexDirection="column"
               alignItems="center"
@@ -124,14 +124,14 @@ const ProfileDetails = () => {
               p={4}
               bgcolor="#f7f7ff"
               sx={{ maxWidth: 800, mx: "auto", position: "relative", minHeight:{xs:"0vh",sm:"50vh"} }}
-            >
+            > */}
               {/* Title and Edit Button */}
-              <Box marginBottom={30}>
+              {/* <Box marginBottom={30}>
                 <PageHeader
                   title="PROFILE DETAILS"
                   isEditMode={isEditMode}
                   setEditMode={setEditMode}
-                />
+                /> */}
 
                 {/* Form Fields */}
 
@@ -815,14 +815,14 @@ const ProfileDetails = () => {
                   </Grid>
                 </Grid>
 
-                
-              </Box>
+
+              {/* </Box>
             </Box>
             <ActionButton
               onClick={handleNextButtonClick}
               isEditMode={isEditMode}
-            />
-          </Box>
+            /> */}
+          {/* </Box> */}
         </Form>
       )}
     </Formik>
